@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <style> 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+section#calculator {
+  width: 220px;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+}
+
+#display {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  text-align: right;
+  background-color: #222;
+  color: #fff;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 40px;
+  gap: 5px;
+}
+
+button {
+  background-color: #555;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+button.operator {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+button.operator:hover {
+  background-color: #0069D9;
+}
+
+button#clear, button#equals {
+  background-color: #999;
+  color: #fff;
+}
+
+button#clear:hover, button#equals:hover {
+  background-color: #888;
+}
+    </style>  
+  </head>
+
+  <body>
+    <div id="calculator">
+      <input type="text" id="display" disabled>
+      <div id="buttons">
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button data-operator="/">/</button>
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button data-operator="*">*</button>
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button data-operator="-">-</button>
+        <button data-value="0">0</button>
+        <button data-operator=".">.</button>
+        <button id="clear">C</button>
+        <button data-operator="+">+</button>
+        <button id="equals">=</button>
+      </div>
+    </div>
+    <script src="js.js"></script>
+  </body>
+</html>
