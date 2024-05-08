@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arithmetic Calculator</title>
+  <style type="text/css">
+     body {
+      border: 1px solid black;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Arithmetic Calculator</h1>
+  <form id="calculator">
+    <label for="num1">Enter the first integer number:</label>
+    <input type="number" id="num1" name="num1" required><br><br>
+    <label for="num2">Enter the second integer number:</label>
+    <input type="number" id="num2" name="num2" required><br><br>
+    <button type="button" onclick="calculateSum()">SUM</button>
+    <button type="button" onclick="calculateDifference()">DIFFERENCE</button>
+    <button type="button" onclick="calculateProduct()">PRODUCT</button>
+    <button type="button" onclick="calculateQuotient()">QUOTIENT</button><br><br>
+    <div id="result-container">
+    <label for="result">Result:</label>
+    <output id="result" name="result"></output>
+  </div>
+  </form>
+
+  <script>
+    function calculateSum() {
+      const num1 = document.getElementById("num1").value;
+      const num2 = document.getElementById("num2").value;
+      const result = Number(num1) + Number(num2);
+      document.getElementById("result").textContent = `The sum is: ${result}`;
+    }
+
+    function calculateDifference() {
+      const num1 = document.getElementById("num1").value;
+      const num2 = document.getElementById("num2").value;
+      const result = Number(num1) - Number(num2);
+      document.getElementById("result").textContent = `The difference is: ${result}`;
+    }
+
+    function calculateProduct() {
+      const num1 = document.getElementById("num1").value;
+      const num2 = document.getElementById("num2").value;
+      const result = Number(num1) * Number(num2);
+      document.getElementById("result").textContent = `The product is: ${result}`;
+    }
+
+    function calculateQuotient() {
+      const num1 = document.getElementById("num1").value;
+      const num2 = document.getElementById("num2").value;
+      if (Number(num2) === 0) {
+        alert("Error: Division by zero is not allowed.");
+        return;
+      }
+      const result = Number(num1) / Number(num2);
+      document.getElementById("result").textContent = `The quotient is: ${result}`;
+    }
+  </script>
+</body>
+</html>
